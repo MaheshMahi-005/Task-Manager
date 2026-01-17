@@ -24,6 +24,9 @@ function addTask() {
   tasks.push(task);
   saveTasks();
   displayTasks(tasks);
+  document.getElementById("title").value = "";
+  document.getElementById("description").value = "";
+  document.getElementById("dueDate").value = "";
 }
 
 function saveTasks() {
@@ -40,8 +43,8 @@ function displayTasks(taskArray) {
     <h3>${task.title}</h3>
     <p>${task.description}</p>
     <p>Due :${task.dueDate}</p>
-    <button onclick="toggleTask(${task.id})">Completed</button>
-    <button onclick="deleteTask(${task.id})">Delete</button>
+    <button onclick="toggleTask(${task.id})">✔️</button>
+    <button onclick="deleteTask(${task.id})">❌</button>
 `;
     taskList.appendChild(div);
   });
@@ -55,20 +58,10 @@ function deleteTask(id) {
 
 function toggleTask(id) {
   tasks = tasks.map((task) =>
-    task.id === id ? { ...task, completed: !task.completed } : task
+    task.id === id ? { ...task, completed: !task.completed } : task,
   );
   saveTasks();
   displayTasks(tasks);
-}
-
-function filterTasks(type) {
-  if (type === "completed") {
-    displayTasks(tasks.filter((t) => t.completed));
-  } else if (type === "pending") {
-    displayTasks(tasks.filter((t) => !t.completed));
-  } else {
-    displayTasks(tasks);
-  }
 }
 
 function checkReminders() {
@@ -82,3 +75,17 @@ function checkReminders() {
 
 displayTasks(tasks);
 checkReminders();
+
+function setFilter(type, btn) {
+  document.querySelectorAll(".filter-btn").forEach((b) => {
+    b.classList.remove("active");
+  });
+  btn.classList.add("active");
+  if (type === "completed") {
+    displayTasks(tasks.filter((t) => t.completed));
+  } else if (type === "pending") {
+    displayTasks(tasks.filter((t) => !t.completed));
+  } else {
+    displayTasks(tasks);
+  }
+}
