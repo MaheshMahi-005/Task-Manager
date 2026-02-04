@@ -54,10 +54,10 @@ function displayTasks(taskArray) {
     <div class="task-actions">
     ${
       !task.completed
-        ? `<button id="1" onclick="toggleTask(${task.id})">✔️</button>`
+        ? `<button class="done" onclick="toggleTask(${task.id})">✔️</button>`
         : ""
     }
-      <button id="2" onclick="deleteTask(${task.id})">❌</button>
+      <button class="delete" onclick="deleteTask(${task.id})">❌</button>
     </div> 
 `;
     taskList.appendChild(div);
