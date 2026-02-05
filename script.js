@@ -107,10 +107,11 @@ displayTasks(tasks);
 checkReminders();
 
 function setFilter(type, btn) {
-  document.querySelectorAll(".filter-btn").forEach((b) => {
+  const buttons = document.querySelectorAll(".filter-btn").forEach((b) => {
     b.classList.remove("active");
   });
   btn.classList.add("active");
+
   if (type === "completed") {
     displayTasks(tasks.filter((t) => t.completed));
   } else if (type === "pending") {
