@@ -14,7 +14,7 @@ Technologies :
          HTML,
          CSS,
          JavaScript.
-Check Out :https://maheshmahi-005.github.io/Algonive_Task_Manager/
+
         
 Dashboard:
 
