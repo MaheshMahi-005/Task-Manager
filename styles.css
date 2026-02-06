@@ -187,14 +187,15 @@ header p {
 
 .task-card h3 {
   font-size: 16px;
-  color: #ffffff;
+  font-weight: 300;
+  color: black;
   margin-bottom: 4px;
   padding: 5px;
 }
 
 .task-card p {
   font-size: 13px;
-  color: #e5e7eb;
+  color: brown;
   margin-bottom: 2px;
 }
 
