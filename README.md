@@ -1,5 +1,5 @@
 Task Manager Web application :
-             A simple and user - friendly Task Manager. Using this application users can add, manage, complete with deadline remainders and delete daily tasks.
+             A simple and user - friendly Task Manager. Using this application users can add, manage, complete  tasks with deadline remainders and delete daily tasks.
              
 Features :
         - Add new task
